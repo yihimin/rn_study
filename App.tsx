@@ -17,7 +17,7 @@ const API_KEY = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
 
 const icons: { [key: string]: string } = {
   Clouds: "cloudy",
-  Clear: "sun",
+  Clear: "day-sunny",
   Rain: "rain",
   Snow: "snow",
   Drizzle: "rain",
