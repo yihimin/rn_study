@@ -9,10 +9,21 @@ import {
 } from "react-native";
 import { useState, useEffect } from "react";
 import * as Location from "expo-location";
+import { Fontisto } from "@expo/vector-icons";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
 const API_KEY = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
+
+const icons: { [key: string]: string } = {
+  Clouds: "cloudy",
+  Clear: "sun",
+  Rain: "rain",
+  Snow: "snow",
+  Drizzle: "rain",
+  Thunderstorm: "rain",
+  Mist: "cloudy",
+};
 
 interface WeatherData {
   list: Array<{
@@ -66,7 +77,7 @@ export default function App() {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.weather}
       >
-        {days === null ? (
+        {days === null || !days.list ? (
           <View style={styles.day}>
             <ActivityIndicator
               color="white"
@@ -77,9 +88,19 @@ export default function App() {
         ) : (
           days.list.slice(0, 5).map((day, index) => (
             <View style={styles.day} key={index}>
-              <Text style={styles.temp}>
-                {Math.round(day.main.temp - 273.15)}°
-              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  width: "90%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={styles.temp}>
+                  {Math.round(day.main.temp - 273.15)}°
+                </Text>
+                <Fontisto name={icons[day.weather[0].main]} size={68} />
+              </View>
               <Text style={styles.weatherName}>{day.weather[0].main}</Text>
               <Text style={styles.tinyText}>{day.weather[0].description}</Text>
             </View>
@@ -100,24 +121,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   cityName: {
-    fontSize: 68,
+    fontSize: 40,
     fontWeight: "500",
   },
   weather: {},
   day: {
-    alignItems: "center",
     width: SCREEN_WIDTH,
   },
   temp: {
     marginTop: 50,
-    fontSize: 178,
+    fontSize: 100,
     fontWeight: "500",
   },
   weatherName: {
-    marginTop: -30,
-    fontSize: 60,
+    marginTop: -20,
+    marginLeft: 20,
+    fontSize: 30,
+    fontWeight: "500",
   },
   tinyText: {
+    marginLeft: 20,
     fontSize: 20,
   },
 });
