@@ -48,7 +48,14 @@
 4. **API 키 설정**
 
    - [OpenWeatherMap](https://openweathermap.org/api)에서 무료 API 키 발급
-   - `App.tsx` 파일의 `API_KEY` 상수에 발급받은 키 입력
+   - 프로젝트 루트에 `.env` 파일 생성:
+     ```
+     EXPO_PUBLIC_WEATHER_API_KEY=your_api_key_here
+     ```
+   - 또는 터미널에서 환경변수 설정:
+     ```bash
+     export EXPO_PUBLIC_WEATHER_API_KEY=your_api_key_here
+     ```
 
 5. **앱 실행**
 
@@ -88,10 +95,8 @@
 - **상단**: 현재 도시 이름 표시
 - **하단**: 수평 스크롤 가능한 날씨 카드들
   - 각 카드: 온도(°C) + 날씨 상태
-  <br />
-![image](https://github.com/user-attachments/assets/a55c191e-b389-4a00-b604-b608214be180)
-
-
+    <br />
+    ![image](https://github.com/user-attachments/assets/a55c191e-b389-4a00-b604-b608214be180)
 
 ## 📦 의존성
 

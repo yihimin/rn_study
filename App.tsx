@@ -12,7 +12,7 @@ import * as Location from "expo-location";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
-const API_KEY = "2ce5f9b07ad8d4623d3501cd8b827e5f";
+const API_KEY = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
 
 interface WeatherData {
   list: Array<{
@@ -21,6 +21,7 @@ interface WeatherData {
     };
     weather: Array<{
       main: string;
+      description: string;
     }>;
     dt_txt: string;
   }>;
