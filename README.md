@@ -88,6 +88,7 @@
 - **상단**: 현재 도시 이름 표시
 - **하단**: 수평 스크롤 가능한 날씨 카드들
   - 각 카드: 온도(°C) + 날씨 상태
+  <br />
 ![image](https://github.com/user-attachments/assets/a55c191e-b389-4a00-b604-b608214be180)
 
 
