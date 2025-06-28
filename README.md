@@ -96,7 +96,8 @@
 - **하단**: 수평 스크롤 가능한 날씨 카드들
   - 각 카드: 온도(°C) + 날씨 상태
     <br />
-    ![image](https://github.com/user-attachments/assets/a55c191e-b389-4a00-b604-b608214be180)
+    ![image](https://github.com/user-attachments/assets/5664ccb9-e9bc-4d61-ac71-e1b6890ff15f)
+
 
 ## 📦 의존성
 
