@@ -80,6 +80,7 @@ export default function App() {
                 {Math.round(day.main.temp - 273.15)}°
               </Text>
               <Text style={styles.weatherName}>{day.weather[0].main}</Text>
+              <Text style={styles.tinyText}>{day.weather[0].description}</Text>
             </View>
           ))
         )}
@@ -114,5 +115,8 @@ const styles = StyleSheet.create({
   weatherName: {
     marginTop: -30,
     fontSize: 60,
+  },
+  tinyText: {
+    fontSize: 20,
   },
 });
